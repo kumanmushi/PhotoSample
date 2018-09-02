@@ -12,6 +12,8 @@ import XLPagerTabStrip
 class Test: ButtonBarPagerTabStripViewController {
     
     override func viewDidLoad() {
+        self.navigationController?.hidesBarsOnSwipe = true
+        
         self.buttonBarView.backgroundColor = UIColor(red: 36/255, green: 36/255, blue: 36/255, alpha: 1)
         self.settings.style.buttonBarItemBackgroundColor = UIColor(red: 36/255, green: 36/255, blue: 36/255, alpha: 0)
         self.settings.style.selectedBarBackgroundColor = UIColor(red: 247/255, green: 240/255, blue: 149/255, alpha: 1)
