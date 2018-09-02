@@ -15,6 +15,7 @@
 		92F548A6213BD8990060B5E4 /* GrayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F548A5213BD8990060B5E4 /* GrayViewController.swift */; };
 		92F548A8213BD8A30060B5E4 /* BlueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F548A7213BD8A30060B5E4 /* BlueViewController.swift */; };
 		92F548AC213C005D0060B5E4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F548AB213C005D0060B5E4 /* MainViewController.swift */; };
+		92F548AE213C1F160060B5E4 /* UIView+Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F548AD213C1F160060B5E4 /* UIView+Border.swift */; };
 		92F6837D2139574600DA092D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F6837C2139574600DA092D /* AppDelegate.swift */; };
 		92F6837F2139574600DA092D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F6837E2139574600DA092D /* ViewController.swift */; };
 		92F683822139574600DA092D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92F683802139574600DA092D /* Main.storyboard */; };
@@ -54,6 +55,7 @@
 		92F548A5213BD8990060B5E4 /* GrayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrayViewController.swift; sourceTree = "<group>"; };
 		92F548A7213BD8A30060B5E4 /* BlueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueViewController.swift; sourceTree = "<group>"; };
 		92F548AB213C005D0060B5E4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		92F548AD213C1F160060B5E4 /* UIView+Border.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Border.swift"; sourceTree = "<group>"; };
 		92F683792139574600DA092D /* test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92F6837C2139574600DA092D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92F6837E2139574600DA092D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				92F548A3213BD7020060B5E4 /* Test.swift */,
+				92F548AD213C1F160060B5E4 /* UIView+Border.swift */,
 				92F6837C2139574600DA092D /* AppDelegate.swift */,
 				92F6837E2139574600DA092D /* ViewController.swift */,
 				92F683802139574600DA092D /* Main.storyboard */,
@@ -323,6 +326,7 @@
 				92F548A6213BD8990060B5E4 /* GrayViewController.swift in Sources */,
 				92F6837D2139574600DA092D /* AppDelegate.swift in Sources */,
 				92F548AC213C005D0060B5E4 /* MainViewController.swift in Sources */,
+				92F548AE213C1F160060B5E4 /* UIView+Border.swift in Sources */,
 				92F548A8213BD8A30060B5E4 /* BlueViewController.swift in Sources */,
 				92F548A4213BD7020060B5E4 /* Test.swift in Sources */,
 			);
