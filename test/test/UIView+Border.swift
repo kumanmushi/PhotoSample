@@ -10,6 +10,13 @@ import UIKit
 
 extension UIView {
     
+    enum BorderPosition {
+        case top
+        case left
+        case right
+        case bottom
+    }
+    
     // 枠線の色
     @IBInspectable var borderColor: UIColor? {
         get {

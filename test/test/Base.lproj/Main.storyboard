@@ -21,42 +21,81 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G8h-xZ-FTo">
                                 <rect key="frame" x="40" y="60" width="295" height="295"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="G8h-xZ-FTo" secondAttribute="height" multiplier="1:1" id="g9g-O8-Np2"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="01T-qz-Sro">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="01T-qz-Sro" customClass="FlatButton" customModule="Material">
                                 <rect key="frame" x="0.0" y="426" width="375" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="0s9-we-79e"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
+                                        <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                                        <color key="value" red="0.1529933342" green="0.38263347869999997" blue="0.47236971970000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="楽曲を選択"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="buttonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v4i-fl-oyh"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="楽曲名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="caE-Yf-z7Y">
+                                <rect key="frame" x="16" y="395" width="52" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="iuE-9Q-0LI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gDh-Zp-Lp2">
+                                <rect key="frame" x="0.0" y="425" width="375" height="1"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="ooP-sm-RAW"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SXF-Sl-d4P">
+                                <rect key="frame" x="0.0" y="456" width="375" height="1"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="FgQ-Ic-hgK"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.078431372550000003" green="0.18039215689999999" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="gDh-Zp-Lp2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="HPw-Od-6u1"/>
                             <constraint firstItem="01T-qz-Sro" firstAttribute="top" secondItem="G8h-xZ-FTo" secondAttribute="bottom" constant="71" id="ILj-KG-rd3"/>
+                            <constraint firstItem="caE-Yf-z7Y" firstAttribute="top" secondItem="G8h-xZ-FTo" secondAttribute="bottom" constant="40" id="Jbd-nk-ilk"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="G8h-xZ-FTo" secondAttribute="trailing" constant="40" id="Pm7-RO-sNa"/>
                             <constraint firstItem="01T-qz-Sro" firstAttribute="top" secondItem="G8h-xZ-FTo" secondAttribute="bottom" constant="71" id="RrF-P6-PVh"/>
                             <constraint firstItem="G8h-xZ-FTo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="SB0-Ad-ZOA"/>
+                            <constraint firstItem="01T-qz-Sro" firstAttribute="top" secondItem="gDh-Zp-Lp2" secondAttribute="bottom" id="SYr-1T-5gn"/>
                             <constraint firstItem="01T-qz-Sro" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TAc-b3-UZ8"/>
+                            <constraint firstAttribute="trailing" secondItem="SXF-Sl-d4P" secondAttribute="trailing" id="XBT-Xg-Pff"/>
                             <constraint firstItem="01T-qz-Sro" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZnN-UI-6Ng"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="01T-qz-Sro" secondAttribute="trailing" id="Zs3-1q-iGs"/>
+                            <constraint firstItem="SXF-Sl-d4P" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="nc7-Yg-C7A"/>
                             <constraint firstItem="G8h-xZ-FTo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="pfl-ho-fEg"/>
+                            <constraint firstAttribute="trailing" secondItem="gDh-Zp-Lp2" secondAttribute="trailing" id="qFL-Kd-q58"/>
+                            <constraint firstItem="SXF-Sl-d4P" firstAttribute="top" secondItem="01T-qz-Sro" secondAttribute="bottom" id="quk-9j-xOB"/>
+                            <constraint firstItem="caE-Yf-z7Y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="sSL-nm-JAv"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="caE-Yf-z7Y" secondAttribute="trailing" constant="20" symbolic="YES" id="zcc-Jm-GAB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -79,13 +118,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aLg-oK-OgO">
-                                <rect key="frame" x="0.0" y="128" width="375" height="539"/>
+                                <rect key="frame" x="0.0" y="104" width="375" height="563"/>
                             </scrollView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NfS-CS-N9a" customClass="ButtonBarView" customModule="XLPagerTabStrip">
-                                <rect key="frame" x="0.0" y="64" width="375" height="64"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="40"/>
                                 <color key="backgroundColor" red="0.14117647058823529" green="0.14117647058823529" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="O1W-7M-aaE"/>
+                                    <constraint firstAttribute="height" constant="40" id="O1W-7M-aaE"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Git-2L-EUA">
                                     <size key="itemSize" width="50" height="50"/>

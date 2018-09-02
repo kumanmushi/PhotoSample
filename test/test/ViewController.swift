@@ -51,7 +51,9 @@ class ViewController: UIViewController, UITabBarControllerDelegate {
     }
     
     @IBAction func buttonAction(_ sender: UIButton) {
-        self.tabBarController?.selectedIndex = 1
+//        self.tabBarController?.selectedIndex = 1
+        sender.setTitle("This Love", for: .normal)
+        
     }
 }
 

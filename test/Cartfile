@@ -1,3 +1,4 @@
 github "Yummypets/YPImagePicker" == 3.4.0
-GitHub "CosmicMind/Material"
+github "CosmicMind/Material"
 github "xmartlabs/XLPagerTabStrip" ~> 8.0
+github "CosmicMind/Material"
