@@ -11,6 +11,8 @@ import XLPagerTabStrip
 
 class Test: ButtonBarPagerTabStripViewController, UISearchBarDelegate {
     
+    let gray = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "post")
+    
     override func viewDidLoad() {
         self.navigationController?.hidesBarsOnSwipe = true
         
@@ -29,6 +31,9 @@ class Test: ButtonBarPagerTabStripViewController, UISearchBarDelegate {
         
         super.viewDidLoad()
         
+        self.view.addSubview(gray.view)
+        self.addChildViewController(gray)
+        self.gray.view.isHidden = true
     }
 
     override public func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
@@ -40,16 +45,30 @@ class Test: ButtonBarPagerTabStripViewController, UISearchBarDelegate {
     
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
         searchBar.setShowsCancelButton(true, animated: true)
+        
+//        self.gray.view.isHidden = false
+        self.setView(view: self.gray.view, hidden: false)
+        
         return true
     }
     
     func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
         searchBar.setShowsCancelButton(false, animated: true)
+        
         return true
     }
 
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.text = ""
         searchBar.resignFirstResponder()
+        
+//        self.gray.view.isHidden = true
+        self.setView(view: self.gray.view, hidden: true)
+    }
+    
+    func setView(view: UIView, hidden: Bool) {
+        UIView.transition(with: view, duration: 0.2, options: .transitionCrossDissolve, animations: {
+            view.isHidden = hidden
+        })
     }
 }
