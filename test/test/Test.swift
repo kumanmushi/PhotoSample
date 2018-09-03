@@ -9,7 +9,7 @@
 import UIKit
 import XLPagerTabStrip
 
-class Test: ButtonBarPagerTabStripViewController {
+class Test: ButtonBarPagerTabStripViewController, UISearchBarDelegate {
     
     override func viewDidLoad() {
         self.navigationController?.hidesBarsOnSwipe = true
@@ -23,6 +23,8 @@ class Test: ButtonBarPagerTabStripViewController {
         searchBar.backgroundColor = UIColor(red: 36/255, green: 36/255, blue: 36/255, alpha: 1)
         self.navigationItem.titleView = searchBar
         
+        searchBar.delegate = self
+        
         self.navigationController?.navigationBar.shadowImage = UIImage()
         
         super.viewDidLoad()
@@ -35,5 +37,19 @@ class Test: ButtonBarPagerTabStripViewController {
         
         return [gray,blue]
     }
+    
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        searchBar.setShowsCancelButton(true, animated: true)
+        return true
+    }
+    
+    func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
+        searchBar.setShowsCancelButton(false, animated: true)
+        return true
+    }
 
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        searchBar.resignFirstResponder()
+    }
 }
