@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9216E6B52140033E0012FBD9 /* FSPagerView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9216E6B42140033E0012FBD9 /* FSPagerView.framework */; };
+		9216E6B9214017930012FBD9 /* MusicPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9216E6B8214017930012FBD9 /* MusicPlayerViewController.swift */; };
 		92F54898213AC0400060B5E4 /* PryntTrimmerView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92F54895213AC0400060B5E4 /* PryntTrimmerView.framework */; };
 		92F54899213AC0400060B5E4 /* Stevia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92F54896213AC0400060B5E4 /* Stevia.framework */; };
 		92F5489A213AC0400060B5E4 /* YPImagePicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92F54897213AC0400060B5E4 /* YPImagePicker.framework */; };
@@ -45,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9216E6B42140033E0012FBD9 /* FSPagerView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FSPagerView.framework; path = Carthage/Build/iOS/FSPagerView.framework; sourceTree = "<group>"; };
+		9216E6B8214017930012FBD9 /* MusicPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerViewController.swift; sourceTree = "<group>"; };
 		92F54891213A28040060B5E4 /* Fusuma.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fusuma.framework; path = Carthage/Build/iOS/Fusuma.framework; sourceTree = "<group>"; };
 		92F54893213A85F10060B5E4 /* ImagePicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImagePicker.framework; path = Carthage/Build/iOS/ImagePicker.framework; sourceTree = "<group>"; };
 		92F54895213AC0400060B5E4 /* PryntTrimmerView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PryntTrimmerView.framework; path = Carthage/Build/iOS/PryntTrimmerView.framework; sourceTree = "<group>"; };
@@ -80,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9216E6B52140033E0012FBD9 /* FSPagerView.framework in Frameworks */,
 				92F548B1213C28DE0060B5E4 /* Motion.framework in Frameworks */,
 				92F548B2213C28DE0060B5E4 /* Material.framework in Frameworks */,
 				92F548A2213BD6320060B5E4 /* XLPagerTabStrip.framework in Frameworks */,
@@ -109,6 +114,7 @@
 		92F54890213A28030060B5E4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9216E6B42140033E0012FBD9 /* FSPagerView.framework */,
 				92F548B0213C28DE0060B5E4 /* Material.framework */,
 				92F548AF213C28DE0060B5E4 /* Motion.framework */,
 				92F548A1213BD6320060B5E4 /* XLPagerTabStrip.framework */,
@@ -156,6 +162,7 @@
 				92F683882139574700DA092D /* Info.plist */,
 				92F548A5213BD8990060B5E4 /* GrayViewController.swift */,
 				92F548A7213BD8A30060B5E4 /* BlueViewController.swift */,
+				9216E6B8214017930012FBD9 /* MusicPlayerViewController.swift */,
 			);
 			path = test;
 			sourceTree = "<group>";
@@ -318,6 +325,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/XLPagerTabStrip.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Material.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Motion.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/FSPagerView.framework",
 			);
 			outputPaths = (
 			);
@@ -338,6 +346,7 @@
 				92F548AC213C005D0060B5E4 /* MainViewController.swift in Sources */,
 				92F548AE213C1F160060B5E4 /* UIView+Border.swift in Sources */,
 				92F548A8213BD8A30060B5E4 /* BlueViewController.swift in Sources */,
+				9216E6B9214017930012FBD9 /* MusicPlayerViewController.swift in Sources */,
 				92F548A4213BD7020060B5E4 /* Test.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

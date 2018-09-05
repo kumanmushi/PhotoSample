@@ -159,6 +159,67 @@
             </objects>
             <point key="canvasLocation" x="972" y="812.74362818590714"/>
         </scene>
+        <!--Data Source-->
+        <scene sceneID="uPw-jB-Uvi">
+            <objects>
+                <viewController id="R2o-8d-ohC" customClass="MusicPlayerViewController" customModule="test" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="r5a-sl-kDQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OVV-SN-TFZ">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sUj-v8-eh3">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FHJ-hw-mHL" customClass="FSPagerView" customModule="FSPagerView">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="240"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="240" id="rIo-8x-wzQ"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="R2o-8d-ohC" id="FHU-0d-I6S"/>
+                                                </connections>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1000" id="52n-N0-UrU"/>
+                                            <constraint firstItem="FHJ-hw-mHL" firstAttribute="top" secondItem="sUj-v8-eh3" secondAttribute="top" id="K1a-98-AKx"/>
+                                            <constraint firstItem="FHJ-hw-mHL" firstAttribute="leading" secondItem="sUj-v8-eh3" secondAttribute="leading" id="ele-nF-hdg"/>
+                                            <constraint firstAttribute="trailing" secondItem="FHJ-hw-mHL" secondAttribute="trailing" id="uWW-BC-aKt"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="sUj-v8-eh3" secondAttribute="trailing" id="EU1-pe-sEy"/>
+                                    <constraint firstAttribute="bottom" secondItem="sUj-v8-eh3" secondAttribute="bottom" id="Fwz-fr-Xkv"/>
+                                    <constraint firstItem="sUj-v8-eh3" firstAttribute="width" secondItem="OVV-SN-TFZ" secondAttribute="width" id="V45-2D-tmZ"/>
+                                    <constraint firstItem="sUj-v8-eh3" firstAttribute="top" secondItem="OVV-SN-TFZ" secondAttribute="top" id="Y6T-Ya-ScJ"/>
+                                    <constraint firstItem="sUj-v8-eh3" firstAttribute="leading" secondItem="OVV-SN-TFZ" secondAttribute="leading" id="ekB-Vg-DG1"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="pIO-qr-KLw" firstAttribute="trailing" secondItem="OVV-SN-TFZ" secondAttribute="trailing" id="8ES-GK-XgL"/>
+                            <constraint firstItem="pIO-qr-KLw" firstAttribute="bottom" secondItem="OVV-SN-TFZ" secondAttribute="bottom" id="Y24-pZ-SMZ"/>
+                            <constraint firstItem="OVV-SN-TFZ" firstAttribute="top" secondItem="pIO-qr-KLw" secondAttribute="top" id="ebi-jo-Qkk"/>
+                            <constraint firstItem="OVV-SN-TFZ" firstAttribute="leading" secondItem="pIO-qr-KLw" secondAttribute="leading" id="nqb-y3-KhO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pIO-qr-KLw"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="c6E-Ey-CEp"/>
+                    <connections>
+                        <outlet property="pagerView" destination="FHJ-hw-mHL" id="7Ce-ym-RTx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ApD-9X-Hzp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="972" y="1657"/>
+        </scene>
         <!--Gray View Controller-->
         <scene sceneID="KIO-ob-WUi">
             <objects>
@@ -200,6 +261,7 @@
                     <connections>
                         <segue destination="uoV-wF-0wP" kind="relationship" relationship="viewControllers" id="T9u-1A-PLU"/>
                         <segue destination="MAy-m4-3Xw" kind="relationship" relationship="viewControllers" id="lww-ad-fCU"/>
+                        <segue destination="Qso-aW-TaL" kind="relationship" relationship="viewControllers" id="fGZ-Dh-HvR"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jpu-Ga-Vzx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -243,6 +305,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ut7-jX-D5r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="46.326836581709152"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="WNi-ms-Wpg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Qso-aW-TaL" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="oNR-1s-DY7"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FY5-y1-21T">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="R2o-8d-ohC" kind="relationship" relationship="rootViewController" id="B6c-zJ-BZK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jIU-fA-AX3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="33" y="1657"/>
         </scene>
     </scenes>
 </document>
