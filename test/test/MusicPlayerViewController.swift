@@ -19,9 +19,12 @@ class MusicPlayerViewController: UIViewController, FSPagerViewDataSource {
         }
     }
 
+    @IBOutlet weak var scrolleView: UIScrollView!
+    @IBOutlet weak var underView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
     }
 
     public func numberOfItems(in pagerView: FSPagerView) -> Int {
@@ -36,8 +39,13 @@ class MusicPlayerViewController: UIViewController, FSPagerViewDataSource {
 
         return cell
     }
+    
+    @IBAction func testButtonAction(_ sender: UIButton) {
+        
+        self.scrolleView.scrollRectToVisible(self.underView.frame, animated: true)
+    }
 }
 
-//extension MusicPlayerViewController: FSPagerViewDelegate {
-//
-//}
+extension MusicPlayerViewController: FSPagerViewDelegate {
+
+}

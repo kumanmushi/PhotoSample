@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecommendTableViewCell" rowHeight="152" id="KGk-i7-Jjw" customClass="RecommendTableViewCell" customModule="test" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="152"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="151.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vZP-Cn-rbT">
+                        <rect key="frame" x="16" y="11" width="42" height="30"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="alN-Ga-Ang">
+                        <rect key="frame" x="68" y="11" width="236" height="30"/>
+                        <state key="normal" title="Button"/>
+                        <connections>
+                            <action selector="moreButtonAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="tDz-O3-LwR"/>
+                        </connections>
+                    </button>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="dlI-p3-157">
+                        <rect key="frame" x="16" y="49" width="304" height="94.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="94.5" id="QKb-6d-oOK"/>
+                        </constraints>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ONR-l0-Vw0">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <connections>
+                            <outlet property="dataSource" destination="KGk-i7-Jjw" id="LdP-Pf-mZN"/>
+                            <outlet property="delegate" destination="KGk-i7-Jjw" id="eTs-B8-uiv"/>
+                        </connections>
+                    </collectionView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="dlI-p3-157" secondAttribute="trailing" id="1me-Xi-LLo"/>
+                    <constraint firstItem="vZP-Cn-rbT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="3vI-2p-PLv"/>
+                    <constraint firstItem="alN-Ga-Ang" firstAttribute="leading" secondItem="vZP-Cn-rbT" secondAttribute="trailing" constant="10" id="GHq-zX-2HP"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="alN-Ga-Ang" secondAttribute="trailing" id="GPq-Rt-Wmg"/>
+                    <constraint firstItem="alN-Ga-Ang" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Kfl-5s-dQP"/>
+                    <constraint firstItem="vZP-Cn-rbT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Vjd-ug-Y5f"/>
+                    <constraint firstAttribute="bottom" secondItem="dlI-p3-157" secondAttribute="bottom" constant="8" id="ef0-6k-VNT"/>
+                    <constraint firstItem="dlI-p3-157" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="l2g-ph-baG"/>
+                    <constraint firstItem="dlI-p3-157" firstAttribute="top" secondItem="vZP-Cn-rbT" secondAttribute="bottom" constant="8" id="r9t-mx-UJS"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="recommendCollectionView" destination="dlI-p3-157" id="sGn-a3-xKD"/>
+                <outlet property="recommendNameLabel" destination="vZP-Cn-rbT" id="4Ng-ph-YGj"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="194"/>
+        </tableViewCell>
+    </objects>
+</document>
