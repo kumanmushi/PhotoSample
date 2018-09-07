@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		921585C52142CB1A00DF10CB /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 921585C42142CB1A00DF10CB /* Alamofire.framework */; };
 		9216E6B52140033E0012FBD9 /* FSPagerView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9216E6B42140033E0012FBD9 /* FSPagerView.framework */; };
 		9216E6B9214017930012FBD9 /* MusicPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9216E6B8214017930012FBD9 /* MusicPlayerViewController.swift */; };
 		9216E6BB214137F40012FBD9 /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9216E6BA214137F40012FBD9 /* TestTableViewController.swift */; };
@@ -52,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		921585C42142CB1A00DF10CB /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		9216E6B42140033E0012FBD9 /* FSPagerView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FSPagerView.framework; path = Carthage/Build/iOS/FSPagerView.framework; sourceTree = "<group>"; };
 		9216E6B8214017930012FBD9 /* MusicPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerViewController.swift; sourceTree = "<group>"; };
 		9216E6BA214137F40012FBD9 /* TestTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				921585C52142CB1A00DF10CB /* Alamofire.framework in Frameworks */,
 				9216E6B52140033E0012FBD9 /* FSPagerView.framework in Frameworks */,
 				92F548B1213C28DE0060B5E4 /* Motion.framework in Frameworks */,
 				92F548B2213C28DE0060B5E4 /* Material.framework in Frameworks */,
@@ -124,6 +127,7 @@
 		92F54890213A28030060B5E4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				921585C42142CB1A00DF10CB /* Alamofire.framework */,
 				9216E6B42140033E0012FBD9 /* FSPagerView.framework */,
 				92F548B0213C28DE0060B5E4 /* Material.framework */,
 				92F548AF213C28DE0060B5E4 /* Motion.framework */,
@@ -343,6 +347,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Material.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Motion.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/FSPagerView.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 			);
 			outputPaths = (
 			);

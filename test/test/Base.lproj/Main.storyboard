@@ -171,10 +171,10 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sUj-v8-eh3">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1334"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1108"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="waf-NE-9Ms">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FHJ-hw-mHL" customClass="FSPagerView" customModule="FSPagerView">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="240"/>
@@ -187,7 +187,7 @@
                                                         </connections>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MTL-9E-DXO">
-                                                        <rect key="frame" x="164" y="527" width="46" height="30"/>
+                                                        <rect key="frame" x="164" y="414" width="46" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="46" id="Ini-f7-7oT"/>
                                                         </constraints>
@@ -199,16 +199,15 @@
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.078431372550000003" green="0.18039215689999999" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
-                                                    <constraint firstItem="MTL-9E-DXO" firstAttribute="top" secondItem="FHJ-hw-mHL" secondAttribute="bottom" constant="287" id="7Ze-dI-AHe"/>
                                                     <constraint firstItem="FHJ-hw-mHL" firstAttribute="leading" secondItem="waf-NE-9Ms" secondAttribute="leading" id="XqN-G8-s0U"/>
                                                     <constraint firstAttribute="trailing" secondItem="FHJ-hw-mHL" secondAttribute="trailing" id="bHX-cK-CSL"/>
-                                                    <constraint firstAttribute="trailing" secondItem="MTL-9E-DXO" secondAttribute="trailing" constant="165" id="nvL-lD-qPi"/>
-                                                    <constraint firstItem="MTL-9E-DXO" firstAttribute="leading" secondItem="waf-NE-9Ms" secondAttribute="leading" constant="164" id="pgY-w8-Rdz"/>
+                                                    <constraint firstItem="MTL-9E-DXO" firstAttribute="centerX" secondItem="waf-NE-9Ms" secondAttribute="centerX" id="ies-Ae-QhQ"/>
                                                     <constraint firstItem="FHJ-hw-mHL" firstAttribute="top" secondItem="waf-NE-9Ms" secondAttribute="top" id="tCT-Sk-G5z"/>
+                                                    <constraint firstAttribute="bottom" secondItem="MTL-9E-DXO" secondAttribute="bottom" constant="110" id="tmg-dI-x7y"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gLi-b5-Bzr">
-                                                <rect key="frame" x="0.0" y="667" width="375" height="667"/>
+                                                <rect key="frame" x="0.0" y="554" width="375" height="554"/>
                                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                         </subviews>
@@ -235,10 +234,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="gLi-b5-Bzr" firstAttribute="height" secondItem="r5a-sl-kDQ" secondAttribute="height" id="0EZ-sv-rW4"/>
                             <constraint firstItem="pIO-qr-KLw" firstAttribute="trailing" secondItem="OVV-SN-TFZ" secondAttribute="trailing" id="8ES-GK-XgL"/>
+                            <constraint firstItem="gLi-b5-Bzr" firstAttribute="height" secondItem="pIO-qr-KLw" secondAttribute="height" id="Buf-4s-acA"/>
                             <constraint firstItem="waf-NE-9Ms" firstAttribute="width" secondItem="r5a-sl-kDQ" secondAttribute="width" id="Cog-QW-3mA"/>
-                            <constraint firstItem="waf-NE-9Ms" firstAttribute="height" secondItem="r5a-sl-kDQ" secondAttribute="height" id="NUf-Rx-9D0"/>
+                            <constraint firstItem="waf-NE-9Ms" firstAttribute="height" secondItem="pIO-qr-KLw" secondAttribute="height" id="MaH-ED-eBq"/>
                             <constraint firstItem="pIO-qr-KLw" firstAttribute="bottom" secondItem="OVV-SN-TFZ" secondAttribute="bottom" id="Y24-pZ-SMZ"/>
                             <constraint firstItem="OVV-SN-TFZ" firstAttribute="top" secondItem="pIO-qr-KLw" secondAttribute="top" id="ebi-jo-Qkk"/>
                             <constraint firstItem="OVV-SN-TFZ" firstAttribute="leading" secondItem="pIO-qr-KLw" secondAttribute="leading" id="nqb-y3-KhO"/>

@@ -8,8 +8,15 @@
 
 import UIKit
 import FSPagerView
+import Alamofire
+import AVFoundation
 
 class MusicPlayerViewController: UIViewController, FSPagerViewDataSource {
+    
+    private let musicURLString: URL = URL(string: "https://pg.kdtk.net/wp-content/uploads/musicsample.mp3")!
+    private let applicationSupportPath = NSHomeDirectory() + "/Library/Application Support"
+    
+    var audioPlayer: AVAudioPlayer!
     
     @IBOutlet weak var pagerView: FSPagerView! {
         didSet {
@@ -22,19 +29,22 @@ class MusicPlayerViewController: UIViewController, FSPagerViewDataSource {
     @IBOutlet weak var scrolleView: UIScrollView!
     @IBOutlet weak var underView: UIView!
     
+    var count = 10
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.pagerView.delegate = self
+        
     }
 
     public func numberOfItems(in pagerView: FSPagerView) -> Int {
-        return 10
+        return self.count
     }
 
     public func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
         let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "cell", at: index)
 
-        cell.textLabel?.text = "test"
+        cell.textLabel?.text = String(index)
         cell.imageView?.image = UIImage(named: "AnimalEland")
 
         return cell
@@ -42,10 +52,37 @@ class MusicPlayerViewController: UIViewController, FSPagerViewDataSource {
     
     @IBAction func testButtonAction(_ sender: UIButton) {
         
-        self.scrolleView.scrollRectToVisible(self.underView.frame, animated: true)
+        let fileManager = FileManager.default
+        print(fileManager.fileExists(atPath: NSHomeDirectory() + "/Library" + "/musicsample.mp3"))
+        
+        do {
+            // AVAudioPlayerのインスタンス化
+            audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath:  NSHomeDirectory() + "/Library" + "/musicsample.mp3"))
+            
+            // 音声の再生
+            audioPlayer.play()
+        } catch {
+            print("muri")
+        }
+        
+//        self.scrolleView.scrollRectToVisible(self.underView.frame, animated: true)
+//        let destination = DownloadRequest.suggestedDownloadDestination(for: .libraryDirectory)
+//        Alamofire.download(self.musicURLString, to: destination).responseData(completionHandler: { (response: DownloadResponse<Data>) -> Void in
+//            let fileManager = FileManager.default
+//            print(fileManager.fileExists(atPath: (response.destinationURL?.absoluteString)!))
+//        })
     }
 }
 
 extension MusicPlayerViewController: FSPagerViewDelegate {
+    
+    func pagerView(_ pagerView: FSPagerView, willDisplay cell: FSPagerViewCell, forItemAt index: Int) {
 
+        if self.count - 5 == index {
+            self.count += 10
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                pagerView.reloadData()
+            }
+        }
+    }
 }
