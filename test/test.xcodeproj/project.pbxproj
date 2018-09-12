@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		921585C52142CB1A00DF10CB /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 921585C42142CB1A00DF10CB /* Alamofire.framework */; };
+		921585C72149277500DF10CB /* AudioPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921585C62149277500DF10CB /* AudioPlayerManager.swift */; };
 		9216E6B52140033E0012FBD9 /* FSPagerView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9216E6B42140033E0012FBD9 /* FSPagerView.framework */; };
 		9216E6B9214017930012FBD9 /* MusicPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9216E6B8214017930012FBD9 /* MusicPlayerViewController.swift */; };
 		9216E6BB214137F40012FBD9 /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9216E6BA214137F40012FBD9 /* TestTableViewController.swift */; };
@@ -54,6 +55,7 @@
 
 /* Begin PBXFileReference section */
 		921585C42142CB1A00DF10CB /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		921585C62149277500DF10CB /* AudioPlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerManager.swift; sourceTree = "<group>"; };
 		9216E6B42140033E0012FBD9 /* FSPagerView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FSPagerView.framework; path = Carthage/Build/iOS/FSPagerView.framework; sourceTree = "<group>"; };
 		9216E6B8214017930012FBD9 /* MusicPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerViewController.swift; sourceTree = "<group>"; };
 		9216E6BA214137F40012FBD9 /* TestTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				9216E6BD214138AA0012FBD9 /* RecommendTableViewCell.xib */,
 				9216E6C0214141F40012FBD9 /* TestCollectionViewCell.swift */,
 				9216E6C1214141F40012FBD9 /* TestCollectionViewCell.xib */,
+				921585C62149277500DF10CB /* AudioPlayerManager.swift */,
 			);
 			path = test;
 			sourceTree = "<group>";
@@ -273,6 +276,11 @@
 				TargetAttributes = {
 					92F683782139574600DA092D = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					92F6838C2139574700DA092D = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -363,6 +371,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9216E6BE214138AA0012FBD9 /* RecommendTableViewCell.swift in Sources */,
+				921585C72149277500DF10CB /* AudioPlayerManager.swift in Sources */,
 				92F6837F2139574600DA092D /* ViewController.swift in Sources */,
 				92F548A6213BD8990060B5E4 /* GrayViewController.swift in Sources */,
 				92F6837D2139574600DA092D /* AppDelegate.swift in Sources */,

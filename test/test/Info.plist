@@ -26,6 +26,10 @@
 	<string>ああ</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>フォトライブラリ使わせて</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>audio</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

@@ -7,12 +7,12 @@
 //
 
 import UIKit
+import FSPagerView
 
-class TestCollectionViewCell: UICollectionViewCell {
+class TestCollectionViewCell: FSPagerViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
 }

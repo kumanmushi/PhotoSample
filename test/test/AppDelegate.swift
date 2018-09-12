@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AVFoundation
+import MediaPlayer
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,6 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().isTranslucent = false
         //ステータスバーの色を変更
         UINavigationBar.appearance().barTintColor = UIColor(red: 36/255, green: 36/255, blue: 36/255, alpha: 1.0)
+        
+
+        
         return true
     }
 
