@@ -9,6 +9,8 @@
 import UIKit
 
 class MainViewController: UITabBarController {
+    
+    let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Player")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,22 +28,34 @@ class MainViewController: UITabBarController {
         self.tabBarItem.setTitleTextAttributes(selectedAttributes, for: .selected)
         
         
+        // XIBの画面をインスタンス化
+        let view: PlayerView = PlayerView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.playerViewDelegaet = self
+        
+        self.view.addSubview(view)
+        
+        // レイアウトアンカーを使用して制約を作成するための定義
+        let margins = self.view.safeAreaLayoutGuide
+        
+        view.leadingAnchor.constraint(equalTo: margins.leadingAnchor).isActive = true
+        view.trailingAnchor.constraint(equalTo: margins.trailingAnchor).isActive = true
+        view.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: -self.tabBar.frame.height).isActive = true
+        view.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        
+        self.view.addSubview(viewController.view)
+        
+        viewController.view.isHidden = true
+
     }
+}
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+// ミニプレイヤー画面を隠しプレイヤー画面を表示
+extension MainViewController: PlayerViewDeleate {
+    func didTap(view: PlayerView) {
+        self.viewController.view.isHidden = false
+        guard let musicPlayerViewController = viewController as? MusicPlayerViewController else { return }
+        musicPlayerViewController.appearView()
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

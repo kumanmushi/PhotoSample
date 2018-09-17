@@ -31,18 +31,15 @@ class MusicPlayerViewController: UIViewController, FSPagerViewDataSource {
     }
 
     @IBOutlet weak var scrolleView: UIScrollView!
+    @IBOutlet weak var playerView: UIView!
     @IBOutlet weak var underView: UIView!
     
     var count = 10
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-       
-        
-        
     }
-
+    
     public func numberOfItems(in pagerView: FSPagerView) -> Int {
         return self.count
     }
@@ -60,8 +57,6 @@ class MusicPlayerViewController: UIViewController, FSPagerViewDataSource {
     
     @IBAction func testButtonAction(_ sender: UIButton) {
         
-        
-        
         if !AudioPlayerManager.makeAudioPlayer(url: URL(fileURLWithPath:  NSHomeDirectory() + "/Library" + "/musicsample.mp3")) {
             print("再生失敗")
         }
@@ -73,15 +68,25 @@ class MusicPlayerViewController: UIViewController, FSPagerViewDataSource {
         AudioPlayerManager.setNowPlayngInfo(title: "title", artistName: "artist", image: image)
         
 //        self.scrolleView.scrollRectToVisible(self.underView.frame, animated: true)
-        
-        let fileManager = FileManager.default
-        print(fileManager.fileExists(atPath: NSHomeDirectory() + "/Library" + "/musicsample.mp3"))
-        
-//        let destination = DownloadRequest.suggestedDownloadDestination(for: .libraryDirectory)
-//        Alamofire.download(self.musicURLString, to: destination).responseData(completionHandler: { (response: DownloadResponse<Data>) -> Void in
-//            let fileManager = FileManager.default
-//            print(fileManager.fileExists(atPath: (response.destinationURL?.absoluteString)!))
-//        })
+    }
+    
+    // ボタンで画面を隠す
+    @IBAction func hideButtonAction(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.2, delay: 0.0, options: .allowAnimatedContent, animations: {
+            self.view.center.y += self.view.frame.height
+        }, completion: { (bool: Bool) -> Void in
+            self.view.isHidden = true
+        })
+    }
+    
+    // プレイヤー画面を表示させる
+    func appearView(){
+        self.scrolleView.scrollRectToVisible(self.playerView.frame, animated: true)
+    }
+    
+    // 一番上までスクロールし画面を隠す
+    func disappearView() {
+        self.scrolleView.scrollRectToVisible(CGRect(), animated: true)
     }
 }
 
@@ -114,5 +119,14 @@ extension MusicPlayerViewController: AVAudioPlayerDelegate {
     // 割り込み終了時にプレーヤーを制御するデリゲートメソッド
     private func audioPlayerEndInterruption(player: AVAudioPlayer) {
         // 復帰処理
+    }
+}
+
+extension MusicPlayerViewController: UIScrollViewDelegate {
+    // 一番上まで来たら画面を隠す
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.bounds.origin.y == 0 {
+            self.view.isHidden = true
+        }
     }
 }

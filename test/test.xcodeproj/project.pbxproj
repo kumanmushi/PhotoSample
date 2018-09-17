@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		921585C52142CB1A00DF10CB /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 921585C42142CB1A00DF10CB /* Alamofire.framework */; };
 		921585C72149277500DF10CB /* AudioPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921585C62149277500DF10CB /* AudioPlayerManager.swift */; };
+		921585CD214FDD4F00DF10CB /* PlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 921585CC214FDD4F00DF10CB /* PlayerView.xib */; };
+		921585CF214FDD8E00DF10CB /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921585CE214FDD8E00DF10CB /* PlayerView.swift */; };
 		9216E6B52140033E0012FBD9 /* FSPagerView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9216E6B42140033E0012FBD9 /* FSPagerView.framework */; };
 		9216E6B9214017930012FBD9 /* MusicPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9216E6B8214017930012FBD9 /* MusicPlayerViewController.swift */; };
 		9216E6BB214137F40012FBD9 /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9216E6BA214137F40012FBD9 /* TestTableViewController.swift */; };
@@ -56,6 +58,8 @@
 /* Begin PBXFileReference section */
 		921585C42142CB1A00DF10CB /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		921585C62149277500DF10CB /* AudioPlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerManager.swift; sourceTree = "<group>"; };
+		921585CC214FDD4F00DF10CB /* PlayerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerView.xib; sourceTree = "<group>"; };
+		921585CE214FDD8E00DF10CB /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		9216E6B42140033E0012FBD9 /* FSPagerView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FSPagerView.framework; path = Carthage/Build/iOS/FSPagerView.framework; sourceTree = "<group>"; };
 		9216E6B8214017930012FBD9 /* MusicPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerViewController.swift; sourceTree = "<group>"; };
 		9216E6BA214137F40012FBD9 /* TestTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
@@ -185,6 +189,8 @@
 				9216E6C0214141F40012FBD9 /* TestCollectionViewCell.swift */,
 				9216E6C1214141F40012FBD9 /* TestCollectionViewCell.xib */,
 				921585C62149277500DF10CB /* AudioPlayerManager.swift */,
+				921585CC214FDD4F00DF10CB /* PlayerView.xib */,
+				921585CE214FDD8E00DF10CB /* PlayerView.swift */,
 			);
 			path = test;
 			sourceTree = "<group>";
@@ -322,6 +328,7 @@
 				92F683842139574700DA092D /* Assets.xcassets in Resources */,
 				9216E6C3214141F40012FBD9 /* TestCollectionViewCell.xib in Resources */,
 				92F683822139574600DA092D /* Main.storyboard in Resources */,
+				921585CD214FDD4F00DF10CB /* PlayerView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,6 +384,7 @@
 				92F6837D2139574600DA092D /* AppDelegate.swift in Sources */,
 				9216E6C2214141F40012FBD9 /* TestCollectionViewCell.swift in Sources */,
 				92F548AC213C005D0060B5E4 /* MainViewController.swift in Sources */,
+				921585CF214FDD8E00DF10CB /* PlayerView.swift in Sources */,
 				92F548AE213C1F160060B5E4 /* UIView+Border.swift in Sources */,
 				9216E6BB214137F40012FBD9 /* TestTableViewController.swift in Sources */,
 				92F548A8213BD8A30060B5E4 /* BlueViewController.swift in Sources */,

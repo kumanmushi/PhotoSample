@@ -12,6 +12,8 @@ class TestTableViewController: UIViewController {
 
     @IBOutlet weak var testTableView: UITableView!
     
+    var count = 10
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,26 +24,38 @@ class TestTableViewController: UIViewController {
 
 extension TestTableViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 10
+        return self.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecommendTableViewCell") as! RecommendTableViewCell
-        
         return cell
     }
-    
     
 }
 
 extension TestTableViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        tableView.estimatedRowHeight = 60
         return UITableViewAutomaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        print(tableView.numberOfRows(inSection: 0))
+        
+        if indexPath.row  == self.count - 1 {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+//                tableView.beginUpdates()
+                self.count += 10
+                
+//                var indexPath = [IndexPath]()
+//                indexPath.append(IndexPath(row: tableView.numberOfRows(inSection: 0) - 1, section: 0))
+//                indexPath.append(IndexPath(row: self.count - 1, section: 0))
+                
+//                tableView.insertRows(at: indexPath, with: .none)
+                tableView.reloadData()
+//                tableView.endUpdates()
+            }
+        }
     }
 
 }
