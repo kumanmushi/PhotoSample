@@ -11,6 +11,7 @@ import FSPagerView
 import Alamofire
 import AVFoundation
 import MediaPlayer
+import YPImagePicker
 
 class MusicPlayerViewController: UIViewController, FSPagerViewDataSource {
     
@@ -18,12 +19,16 @@ class MusicPlayerViewController: UIViewController, FSPagerViewDataSource {
     private let applicationSupportPath = NSHomeDirectory() + "/Library/Application Support"
     let cellID: String = "TestCollectionViewCell"
     
+    @IBOutlet weak var testttButton: UIButton!
+    
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
+    
     var audioPlayer: AVAudioPlayer!
     
     @IBOutlet weak var pagerView: FSPagerView! {
         didSet {
-//        self.pagerView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "cell")
-        self.pagerView.register(UINib(nibName: cellID, bundle: nil), forCellWithReuseIdentifier: cellID)
+        self.pagerView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "cell")
+//        self.pagerView.register(UINib(nibName: cellID, bundle: nil), forCellWithReuseIdentifier: cellID)
         self.pagerView.transformer = FSPagerViewTransformer(type: .linear)
         self.pagerView.itemSize = CGSize(width: pagerView.frame.height, height: pagerView.frame.height)
             self.pagerView.delegate = self
@@ -38,6 +43,8 @@ class MusicPlayerViewController: UIViewController, FSPagerViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
     }
     
     public func numberOfItems(in pagerView: FSPagerView) -> Int {
@@ -45,17 +52,37 @@ class MusicPlayerViewController: UIViewController, FSPagerViewDataSource {
     }
 
     public func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
-//        let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "cell", at: index)
-        let cell = pagerView.dequeueReusableCell(withReuseIdentifier: cellID, at: index) as! TestCollectionViewCell
-        cell.backgroundColor = UIColor.brown
+        let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "cell", at: index)
 
-//        cell.textLabel?.text = String(index)
-//        cell.imageView?.image = UIImage(named: "AnimalEland")
+        cell.textLabel?.text = String(index)
+        cell.imageView?.image = UIImage(named: "AnimalEland")
 
         return cell
     }
     
     @IBAction func testButtonAction(_ sender: UIButton) {
+        
+        // コードでルートビューコントローラーから遷移させれば動く！
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "post")
+        self.view.window?.rootViewController?.present(vc, animated: true, completion: nil)
+        
+        self.testttButton.isHidden = true
+        self.indicator.isHidden = false
+        self.indicator.startAnimating()
+        
+        
+        DispatchQueue.global(qos: .default).async {
+
+            Thread.sleep(forTimeInterval: 5)
+            
+            // 非同期処理などが終了したらメインスレッドでアニメーション終了
+            DispatchQueue.main.async {
+                // アニメーション終了
+                self.testttButton.isHidden = false
+                self.indicator.isHidden = true
+                self.indicator.stopAnimating()
+            }
+        }
         
         if !AudioPlayerManager.makeAudioPlayer(url: URL(fileURLWithPath:  NSHomeDirectory() + "/Library" + "/musicsample.mp3")) {
             print("再生失敗")
@@ -68,7 +95,7 @@ class MusicPlayerViewController: UIViewController, FSPagerViewDataSource {
         AudioPlayerManager.setNowPlayngInfo(title: "title", artistName: "artist", image: image)
         
 //        self.scrolleView.scrollRectToVisible(self.underView.frame, animated: true)
-    }
+        }
     
     // ボタンで画面を隠す
     @IBAction func hideButtonAction(_ sender: UIButton) {
